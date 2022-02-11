@@ -17,6 +17,15 @@ getrapl -p pkg
 getrapl -p dram
 ```
 
+You can also run it without parameters and GetRAPL will automatically detect which Intel RAPL package is supported and provide the most complete value : either psys alone, either pkg alone, either pkg + dram together if both are present and psys is not.
+
+```
+getrapl
+```
+
+On 5.10+ Linux kernels, RAPL packages can't be read without elevated privileges.
+So either run the tool with ```sudo getrapl``` or give reading permissions to the ```energy_uj``` files for all RAPL packages.
+
 ## :newspaper: License
 
 PowerJoular is licensed under the GNU GPL 3 license only (GPL-3.0-only).
